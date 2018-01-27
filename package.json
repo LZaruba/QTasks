@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "scripts": {
     "postinstall": "npm install --prefix QTasksServer",
-    "start" : "node --prefix QTasksServer server.js"
+    "start" : "npm start --prefix QTasksServer server.js"
   }
 }
