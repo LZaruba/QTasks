@@ -4,6 +4,7 @@
   "description": "QTasksServer",
   "main": "server.js",
   "scripts": {
+	"start" : "node server.js",
     "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
   },
   "repository": {
