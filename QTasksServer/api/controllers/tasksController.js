@@ -43,10 +43,16 @@ exports.listAllTasks = function(req, resp) {
 	for(let v of data.values()) {
 		values.push(v);
 	}
+	setHeaders(resp);
 	resp.json(values);
 };
 
+function setHeaders(resp) {
+	resp.setHeader('Access-Control-Allow-Origin', '*');
+}
+
 exports.getTask = function(req, resp) {
+	setHeaders(resp);
 	resp.json(data.get(req.params.taskId));
 };
 
