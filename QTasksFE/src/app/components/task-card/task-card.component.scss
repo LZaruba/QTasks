@@ -1,0 +1,26 @@
+.content {
+    padding: 10px;
+}
+
+.task-card {
+    max-width: 100%;
+}
+
+.task-title {
+    text-decoration: underline;
+}
+
+.task-desc {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    li {
+        display: inline;
+    }
+}

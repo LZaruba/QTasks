@@ -1,0 +1,3 @@
+[submodule "QTasksFE"]
+	path = QTasksFE
+	url = git@github.com:LZaruba/QTasks.git
