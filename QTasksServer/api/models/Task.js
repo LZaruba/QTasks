@@ -4,13 +4,15 @@
 'use strict';
 
 class Task {
-	constructor(id, project, title, assignee, deadline, url) {
+	constructor(id, project, title, assignee, deadline, url, priority, types) {
 		this.id = id;
 		this.project = project;
 		this.title = title;
 		this.assignee = assignee;
 		this.deadline = deadline;
 		this.url = url;
+		this.priority = priority;
+		this.types = types;
 	}
 } 
 
