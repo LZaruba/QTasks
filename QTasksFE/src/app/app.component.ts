@@ -28,4 +28,37 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.tasks = this.taskSrv.getAll();
   }
+
+  public isMyTasks(task: any): boolean {
+    let result = false;
+    if (this.contains(task.types, 'my_tasks')) {
+      result = true;
+    }
+    return result;
+  }
+
+  public isOverDueTasks(task: any): boolean {
+    let result = false;
+    if (this.contains(task.types, 'overdue')) {
+      result = true;
+    }
+    return result;
+  }
+
+  public isAllTasks(task: any): boolean {
+    let result = false;
+    if (this.contains(task.types, 'alltasks')) {
+      result = true;
+    }
+    return result;
+  }
+
+  public contains(types: string[], type: string): boolean {
+    let result = false;
+    const index = types.findIndex(elem => elem.toLowerCase() === type.toLowerCase());
+    if (index !== -1) {
+      result = true;
+    }
+    return result;
+  }
 }

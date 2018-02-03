@@ -10,6 +10,8 @@ export class TaskCardComponent implements OnInit {
   @Input() public project;
   @Input() public due;
   @Input() public type;
+  public arrow: string;
+  public color: string;
 
   constructor() { }
 
@@ -20,8 +22,10 @@ export class TaskCardComponent implements OnInit {
     let result = 'arrow_downward';
     if (this.type === 'critical') {
       result = 'arrow_upward';
-    } else if (this.type === 'other') {
-      result = '';
+    } else if (this.type === 'low') {
+      result = 'arrow_downward';
+    } else if (this.type === 'normal') {
+      result = 'arrow_drop_down';
     }
     return result;
   }
@@ -31,7 +35,9 @@ export class TaskCardComponent implements OnInit {
     if (this.type === 'critical') {
       result = 'warn';
     } else if (this.type === 'other') {
-      result = '';
+      result = 'accent';
+    } else if (this.type === 'normal') {
+      result = 'primary';
     }
     return result;
   }

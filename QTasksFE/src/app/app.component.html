@@ -1,11 +1,23 @@
 <mat-tab-group>
   <mat-tab label="My Tasks" color="warn">
     <span *ngFor="let task of tasks | async; index as i">
-        <app-task-card [title]="task.title" [type]="task.type" [project]="task.project" [due]="task.deadLine"></app-task-card>
+      <ng-container *ngIf="isMyTasks(task)">
+          <app-task-card [title]="task.title" [type]="task.priority" [project]="task.project" [due]="task.deadline"></app-task-card>
+      </ng-container>
     </span>
   </mat-tab>
   <mat-tab label="Overdue" color="primary">
-    Overdue
+      <span *ngFor="let task of tasks | async; index as i">
+          <ng-container *ngIf="isOverDueTasks(task)">
+              <app-task-card [title]="task.title" [type]="task.priority" [project]="task.project" [due]="task.deadline"></app-task-card>
+          </ng-container>
+        </span>
   </mat-tab>
-  <mat-tab label="All Tasks" color="primary">All Tasks</mat-tab>
+  <mat-tab label="All Tasks" color="primary">
+      <span *ngFor="let task of tasks | async; index as i">
+          <ng-container *ngIf="isAllTasks(task)">
+              <app-task-card [title]="task.title" [type]="task.priority" [project]="task.project" [due]="task.deadline"></app-task-card>
+          </ng-container>
+        </span>
+  </mat-tab>
 </mat-tab-group>
